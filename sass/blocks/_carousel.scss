@@ -1,0 +1,46 @@
+.carousel {
+  padding: 81px 0;
+  .container {
+    position: relative;
+  }
+  &__inner {
+    position: relative;
+    width: 750px;
+    // height: 100%;
+    margin: 0 auto;
+    img {
+      width: 100%;
+    }
+  }
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: traslateY(-50%);
+    left: -66px;
+    background: #fff;
+    border: none;
+    img {
+      height: 41px;
+      width: 50px;
+    }
+  }
+  .next {
+    right: -66px;
+    left: auto;
+  }
+  .slick-dots {
+    display: flex;
+    justify-content: space-around;
+    color: #D7D7D7;
+    font-size: 35px;
+    li {
+      transition: 0.3s all;
+    }
+    button {
+      display: none;
+    }
+  }
+  .slick-active {
+      color: #108AF9;
+  }
+}
