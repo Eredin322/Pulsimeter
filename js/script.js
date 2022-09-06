@@ -1,4 +1,4 @@
-// --- КОД slick ---
+// --- Слайдеры, библиотека0 slick-slider ---
 $(document).ready(function(){     // Отвечает за то, чтобы мы загружали наш слайдер только когда наш документ полностью. $ - библиотека JQuery
   $('.carousel__inner').slick({   // Обращаемся к классу carousel__inner. slick() это метод, который позволяет запустить наш slick слайдер
     speed: 1200,                  // Speed of slide scrolling
