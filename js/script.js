@@ -39,6 +39,14 @@ $(document).ready(function(){     // Отвечает за то, чтобы мы
   toggleSlide('.catalog-item__back');
 });                              
 
+  // Меняет содержимое табов для адаптации под мобилки
+if(window.innerWidth < 730) {
+  document.getElementById("tab1").innerHTML = "Фитнес";
+  document.getElementById("tab2").innerHTML = "Бег";
+  document.getElementById("tab3").innerHTML = "Триатлон";
+}
+
+
 // <!-- Список дополнительных настроек разобранных в уроке -->
 //dots: true,                 // Кружочки под слайдеров
 //infinite: true,             // Бесконечная прокрутка, default setting, can be removed

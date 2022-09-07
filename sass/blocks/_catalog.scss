@@ -42,6 +42,7 @@
     flex-wrap: wrap;
     &_active {
       display: flex;
+      justify-content: space-evenly;
     }
   }
   &-item{
