@@ -39,12 +39,30 @@ $(document).ready(function(){     // Отвечает за то, чтобы мы
   toggleSlide('.catalog-item__back');
 });                              
 
-  // Меняет содержимое табов для адаптации под мобилки
+  // Меняет содержимое табов при загрузке
 if(window.innerWidth < 730) {
   document.getElementById("tab1").innerHTML = "Фитнес";
   document.getElementById("tab2").innerHTML = "Бег";
   document.getElementById("tab3").innerHTML = "Триатлон";
-}
+};
+
+  // Меняет содержимое табов при изменении разрешения
+  $('document').ready(function() {
+    // Начальное состояние
+    my_func();
+    $(window).resize(function() {
+        document.getElementById("tab1").innerHTML = "Фитнес";
+        document.getElementById("tab2").innerHTML = "Бег";
+        document.getElementById("tab3").innerHTML = "Триатлон";
+        my_func();
+    });
+    function my_func() {
+        /**
+         * Считываем значение из CSS
+         */
+        var browserMinWidth = parseInt($('head').css('min-width'), 10);
+    }
+});
 
 
 // <!-- Список дополнительных настроек разобранных в уроке -->
