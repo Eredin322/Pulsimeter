@@ -126,6 +126,11 @@
   }
 };
 @media (max-width: 575px) {
+  .header {
+    &__logo {
+      width: 250px;
+    }
+  }
   .promo {
     padding-bottom: 40px;
     &__header {
@@ -198,6 +203,17 @@
   }
 };
 @media (max-width: 376px) {
+  .header {
+    &__logo {
+      font-size: 10px;
+      img {
+        margin-right: 10px;
+      }
+      span {
+        font-size: 25px;
+      }
+    }
+  }
   .promo {
     &__header {
       font-size: 22px;
@@ -261,7 +277,10 @@
 @media (max-width: 350px) {
   .header {
     &__logo {
-      width: 165px;
+      font-size: 9px;
+      span {
+        font-size: 25px;
+      }
     }
   }
 };

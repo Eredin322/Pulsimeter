@@ -37,3 +37,10 @@
     font-weight: 300;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Antipasto Pro';
+    src: local('../fonts/Antipasto Pro Medium'), local('../fonts/Antipasto-Pro-Medium'), url('../fonts/AntipastoPro-Medium.woff2') format('woff2'), url('../fonts/AntipastoPro-Medium.woff') format('woff'), url('../fonts/AntipastoPro-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}

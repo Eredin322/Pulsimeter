@@ -31,8 +31,11 @@
   }
   &__icon {
     img {
+      filter: invert(100%) sepia(3%) saturate(10%) hue-rotate(111deg) brightness(105%) contrast(100%);
+      height: 50px;
       display: block;
       margin: 0 auto;
+      margin-bottom: 20px;
     }
     font-size: 14px;
     font-weight: 500;

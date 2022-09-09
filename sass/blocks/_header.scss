@@ -3,9 +3,24 @@
   justify-content: space-between;
   align-items: center;
   &__logo {
+    display: flex;
+    color: white;
     width: 250px;
+    text-decoration: none;
+    font-size: 12px;
     img {
-      width: 100% ;
+      height: 45px;
+      filter: invert(100%) sepia(3%) saturate(10%) hue-rotate(111deg) brightness(105%) contrast(100%);
+      margin-right: 20px;
+    }
+    span {
+      font-size: 30px;
+      font-family: 'Antipasto Pro';
+      line-height: 30px;
+      display: block;
+    }
+    div {
+      font-family: 'Antipasto Pro';
     }
   }
   &__official {
