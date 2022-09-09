@@ -1,8 +1,8 @@
 .footer {
-  min-height: 630px;
+  height: 630px;
   position: relative;
   &__info {
-    position:absolute;
+    position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
