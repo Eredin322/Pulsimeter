@@ -27,3 +27,46 @@
     line-height: 38px;
   }
 };
+
+@-webkit-keyframes button_ripple-out {
+  100% {
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    opacity: 0;
+  }
+}
+@keyframes button_ripple-out {
+  100% {
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    opacity: 0;
+  }
+}
+.button_ripple-out {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+}
+.button_ripple-out:before {
+  content: '';
+  position: absolute;
+  border: $main-color solid 3px;
+  border-radius: 5px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+}
+.button_ripple-out:hover:before, .button_ripple-out:focus:before, .button_ripple-out:active:before {
+  -webkit-animation-name: button_ripple-out;
+  animation-name: button_ripple-out;
+}
