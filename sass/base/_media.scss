@@ -216,6 +216,23 @@
       }
     }
   }
+  .modal {
+    width: 300px;
+    padding: 28px 20px 20px 20px;
+    &__subtitle {
+      font-size: 16px;
+    }
+    .feed-form {
+      input {
+        width: 260px;
+        font-size: 14px;
+      }
+      .button_submit {
+        width: 260px;
+        font-size: 14px;
+      }
+    }
+  }
 };
 @media (max-width: 376px) {
   .header {
@@ -286,6 +303,14 @@
       height: 40px;
       line-height: 40px;
       font-size: 14px;
+    }
+  }
+  .modal {
+    &__close {
+      top: 5px;
+      right: 5px;
+      font-weight: normal;
+      font-size: 35px;
     }
   }
 };
