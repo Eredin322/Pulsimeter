@@ -81,6 +81,34 @@ if(window.innerWidth < 730) {
     })
   });
 
+  // JQuery Validation Plugin
+  function validateForms(form){
+    $(form).validate({
+      rules: {
+        name: 'required',
+        phone: 'required',
+        email: {
+          required: true,
+          email: true
+        }
+      },
+      messages: {
+        name: "Пожалуйста, введите свое имя",
+        phone: "Пожалуйста, введите свой номер телефона",
+        email: {
+          required: "Пожалуйста, введи свою почту",
+          email: "Неверный адрес почты"
+        }
+    }
+    })};
+
+    validateForms('#consultation-form');
+    validateForms('#consultation form');
+    validateForms('#order form');
+
+  //Jquery Masked Imput
+  $('input[name=phone]').mask('+7 (999) 999-99-99')  
+
 // <!-- Список дополнительных настроек разобранных в уроке -->
 //dots: true,                 // Кружочки под слайдеров
 //infinite: true,             // Бесконечная прокрутка, default setting, can be removed
