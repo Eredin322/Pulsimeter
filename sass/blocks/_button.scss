@@ -11,6 +11,7 @@
   &:active {
     color: $main-color;
     background-color: #fff;
+    border: 1px solid $main-color
   }
   &_main {
     width: 300px;

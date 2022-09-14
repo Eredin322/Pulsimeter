@@ -3,8 +3,8 @@ $(document).ready(function(){     // Отвечает за то, чтобы мы
   $('.carousel__inner').slick({   // Обращаемся к классу carousel__inner. slick() это метод, который позволяет запустить наш slick слайдер
     speed: 1200,                  // Speed of slide scrolling
     adaptiveHeight: true,         // Высота карусели подстраивается
-    prevArrow: '<button type='button' class='prev'><img src='icons/arrow-left.svg'></button>',
-    nextArrow: '<button type='button' class='next'><img src='icons/arrow-right.svg'></button>',
+    prevArrow: '<button type="button" class="prev"><img src="icons/arrow-left.svg"></button>',
+    nextArrow: '<button type="button" class="next"><img src="icons/arrow-right.svg"></button>',
     useCSS: true,
     responsive: [
       {
@@ -12,7 +12,7 @@ $(document).ready(function(){     // Отвечает за то, чтобы мы
         settings: {
           dots: true,
           arrows: false,
-          respondTo: '.container'
+          respondTo: ".container"
         }
       }
     ]
@@ -51,9 +51,9 @@ $(document).ready(function(){     // Отвечает за то, чтобы мы
 
   // Меняет содержимое табов при загрузке
 if(window.innerWidth < 730) {
-  document.getElementById('tab1').innerHTML = 'Фитнес';
-  document.getElementById('tab2').innerHTML = 'Бег';
-  document.getElementById('tab3').innerHTML = 'Триатлон';
+  document.getElementById("tab1").innerHTML = "Фитнес";
+  document.getElementById("tab2").innerHTML = "Бег";
+  document.getElementById("tab3").innerHTML = "Триатлон";
 };
 
   // Меняет содержимое табов при изменении разрешения
@@ -61,9 +61,9 @@ if(window.innerWidth < 730) {
     // Начальное состояние
     my_func();
     $(window).resize(function() {
-        document.getElementById('tab1').innerHTML = 'Фитнес';
-        document.getElementById('tab2').innerHTML = 'Бег';
-        document.getElementById('tab3').innerHTML = 'Триатлон';
+        document.getElementById("tab1").innerHTML = "Фитнес";
+        document.getElementById("tab2").innerHTML = "Бег";
+        document.getElementById("tab3").innerHTML = "Триатлон";
         my_func();
     });
     function my_func() {
@@ -76,8 +76,8 @@ if(window.innerWidth < 730) {
 
 
   // Modal
-  $('[data-modal='consultation']').on('click', function() {
-    $('.overlay, #consultation').fadeIn('slow');
+  $('[data-modal="consultation"]').on('click', function() {
+    $(".overlay, #consultation").fadeIn('slow');
   });
   $('.modal__close').on('click', function () {
     $('.overlay, #consultation, #thanks, #order').fadeOut('slow');
@@ -86,7 +86,7 @@ if(window.innerWidth < 730) {
   $('.button_mini').each(function(i) {
     $(this).on('click', function() {
       $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
-      $('.overlay, #order').fadeIn('slow');
+      $(".overlay, #order").fadeIn('slow');
     })
   });
 
@@ -102,11 +102,11 @@ if(window.innerWidth < 730) {
         }
       },
       messages: {
-        name: 'Пожалуйста, введите свое имя',
-        phone: 'Пожалуйста, введите свой номер телефона',
+        name: "Пожалуйста, введите свое имя",
+        phone: "Пожалуйста, введите свой номер телефона",
         email: {
-          required: 'Пожалуйста, введи свою почту',
-          email: 'Неверный адрес почты'
+          required: "Пожалуйста, введи свою почту",
+          email: "Неверный адрес почты"
         }
     }
     })};
@@ -116,14 +116,14 @@ if(window.innerWidth < 730) {
     validateForms('#order form');
 
   //Jquery Masked Imput
-  $('input[name=phone]').mask('+7 (999) 999-99-99')  
+  $('input[name=phone]').mask('+7 (999) 999-99-99');
 
   
   $('form').submit(function(e) {
     e.preventDefault();         // Убирает стандартное поведение браузера с формами и отправляет данные на сервер
     $.ajax({                    // Отправляем данные на сервер
       type: 'POST',             // Указываем что мы хотим: Получить данные с сервера или отправить
-      url: 'mailer/smart.php',  // Какой обработчик будет обрабатывать запрос
+      url: '../mailer/smart.php',  // Какой обработчик будет обрабатывать запрос
       data: $(this).serialize() // Указываем какие данные отправляем на сервер, подготавливаем перед отправкой на сервер
     }).done(function() {
       $(this).find('input').val('');
@@ -133,4 +133,6 @@ if(window.innerWidth < 730) {
     });
     return false;
   });
+
+
 
