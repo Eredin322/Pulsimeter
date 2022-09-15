@@ -15,6 +15,11 @@
       margin-top: 45px;
     }
   }
+  .advantages {
+    &__list {
+      align-items: center;
+    }
+  }
   .carousel {
     &__inner {
       padding: 0 10px;
@@ -90,7 +95,6 @@
     }
     &__item {
       margin-top: 40px;
-      margin-left: 0;
     }
   }
   .catalog {

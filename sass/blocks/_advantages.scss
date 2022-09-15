@@ -14,7 +14,7 @@
     margin-top: 65px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: top;
   }
   &__item {
     align-items: center;
@@ -23,12 +23,17 @@
     text-align: center;
     color: #0d0d0d;
     width: 250px;
-    margin-left: 20px;
+    margin: 0 10px;
+    
     img {
       display: block;
+      filter: invert(11%) sepia(65%) saturate(7197%) hue-rotate(358deg) brightness(109%) contrast(95%);
       width: 70px;
       margin: 0 auto;
       margin-bottom: 38px;
+      &:last-child {
+        transform: scaleX(-1);
+      }
     }
     span {
       display: block;
