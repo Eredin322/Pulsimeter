@@ -47,9 +47,10 @@ $(document).ready(function(){     // Отвечает за то, чтобы мы
 
   toggleSlide('.catalog-item__link');
   toggleSlide('.catalog-item__back');
-});                              
 
-  // Меняет содержимое табов при загрузке
+
+
+    // Меняет содержимое табов при загрузке
 if(window.innerWidth < 730) {
   document.getElementById("tab1").innerHTML = "Фитнес";
   document.getElementById("tab2").innerHTML = "Бег";
@@ -126,13 +127,13 @@ if(window.innerWidth < 730) {
       url: '../mailer/smart.php',  // Какой обработчик будет обрабатывать запрос
       data: $(this).serialize() // Указываем какие данные отправляем на сервер, подготавливаем перед отправкой на сервер
     }).done(function() {
-      $(this).find('input').val('');
-
-
+      $(this).find("input").val("");
+      $('#consultation, #order').fadeOut();
+      $('.overlay, #thanks').fadeIn('slow');
+      
       $('form').trigger('reset');
     });
     return false;
   });
-
-
+});                              
 

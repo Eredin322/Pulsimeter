@@ -8,13 +8,13 @@ require_once('phpmailer/PHPMailerAutoload.php');			// Запускает PHP с�
 $mail = new PHPMailer;
 $mail->CharSet = 'utf-8';
 
-// $mail->SMTPDebug = 3;                              // Enable verbose debug output
+$mail->SMTPDebug = 3;                              // Enable verbose debug output
 
 $mail->isSMTP();                                      // Set mailer to use SMTP. Предоставляем скрипту свою почту. SMTP сервер есть у каждого почтовика.
-$mail->Host = 'smtp.gmail.com';  										  // Specify main and backup SMTP servers
+$mail->Host = 'smtp.gmail.com';  										// Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'bookervoss@gmail.com';           	// Наш логин
-$mail->Password = 'bkmrf291087';                      // Наш пароль от ящика
+$mail->Username = 'bookervoss@gmail.com';      // Наш логин
+$mail->Password = 'gsqwgfnewjdkplkh';                 // Наш пароль от ящика
 $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 465;                                    // TCP port to connect to
  
@@ -28,9 +28,9 @@ $mail->addAddress('bkmrfrbkmrf326915@mail.ru');     	// Add a recipient
 //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 $mail->isHTML(true);                                  // Set email format to HTML
 
-$mail->Subject = 'Данные клиента';
+$mail->Subject = 'Пользователь запросил звонок';
 $mail->Body    = '
-		Пользователь запросил звонок <br> 
+		Данные пользователя: <br> 
 	Имя: ' . $name . ' <br>
 	Номер телефона: ' . $phone . '<br>
 	E-mail: ' . $email . '';
