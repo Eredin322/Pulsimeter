@@ -151,5 +151,8 @@ if(window.innerWidth < 730) {
     $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
     return false;
   });
+
+  // Активируем плагин WOW.JS
+  new WOW().init();
 });                              
 
