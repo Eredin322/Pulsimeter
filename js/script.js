@@ -91,51 +91,43 @@ if(window.innerWidth < 730) {
     })
   });
 
-  // JQuery Validation Plugin
-  function validateForms(form){
-    $(form).validate({
-      rules: {
-        name: 'required',
-        phone: 'required',
-        email: {
-          required: true,
-          email: true
-        }
-      },
-      messages: {
-        name: "Пожалуйста, введите свое имя",
-        phone: "Пожалуйста, введите свой номер телефона",
-        email: {
-          required: "Пожалуйста, введи свою почту",
-          email: "Неверный адрес почты"
-        }
-    }
-    })};
-
-    validateForms('#consultation-form');
-    validateForms('#consultation form');
-    validateForms('#order form');
 
   //Jquery Masked Imput
   $('input[name=phone]').mask('+7 (999) 999-99-99');
 
-  
-  $('form').submit(function(e) {
-    e.preventDefault();         // Убирает стандартное поведение браузера с формами и отправляет данные на сервер
-    $.ajax({                    // Отправляем данные на сервер
-      type: 'POST',             // Указываем что мы хотим: Получить данные с сервера или отправить
-      url: '../mailer/smart.php',  // Какой обработчик будет обрабатывать запрос
-      data: $(this).serialize() // Указываем какие данные отправляем на сервер, подготавливаем перед отправкой на сервер
-    }).done(function() {
-      $(this).find("input").val("");
-      $('#consultation, #order').fadeOut();
-      $('.overlay, #thanks').fadeIn('slow');
-      
-      $('form').trigger('reset');
-    });
-    return false;
-  });
 
+
+    // JQuery Validation Plugin
+    function validateForms(form){
+      $(form).validate({
+        rules: {
+          name: {
+            required: true,
+            minlength: 2
+          },
+          phone: 'required',
+          email: {
+            required: true,
+            email: true
+          },
+        messages: {
+          name: {
+            required: "Пожалуйста, введите свое имя",
+            minlength: jQuery.validator.format("Введите {0} символа!")
+          },
+          phone: "Пожалуйста, введите свой номер телефона",
+          email: {
+            required: "Пожалуйста, введи свою почту",
+            email: "Неверный адрес почты"
+          }
+        },
+      }
+      })};
+  
+      validateForms('#consultation-form');
+      validateForms('#consultation form');
+      validateForms('#order form');
+  
   // Smooth scroll and pageup
 
   $(window).scroll(function() {
