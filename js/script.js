@@ -146,5 +146,26 @@ if(window.innerWidth < 730) {
 
   // Активируем плагин WOW.JS
   new WOW().init();
+
+  // Lazyload для yandex maps
+  let YaMapsShown = false; 
+
+  $(document).ready(function (){
+
+    $(window).scroll(function() {
+      if (!YaMapsShown){
+      if($(window).scrollTop() + $(window).height() > $(document).height() - 1300) {      
+        showYaMaps();
+        YaMapsShown = true;
+      }
+      }
+  });
+  });
+
+  function showYaMaps(){
+  let script   = document.createElement("script");
+  script.src   = "https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A3d99d5a4aa53889aba13f7a4f599f7b0343a18a999ed426411c91ede6b8c8f92&amp;width=100%25&amp;height=630&amp;lang=ru_RU&amp;scroll=false";
+  document.getElementById("YaMaps").appendChild(script);
+  }
 });                              
 
